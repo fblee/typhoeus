@@ -146,6 +146,7 @@ module Typhoeus
       easy.timeout      = request.timeout if request.timeout
       easy.connect_timeout = request.connect_timeout if request.connect_timeout
       easy.follow_location = request.follow_location if request.follow_location
+      easy.enable_cookies = request.enable_cookies if request.enable_cookies
       easy.max_redirects = request.max_redirects if request.max_redirects
       easy.proxy = request.proxy if request.proxy
       easy.disable_ssl_peer_verification if request.disable_ssl_peer_verification

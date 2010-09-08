@@ -7,7 +7,7 @@ module Typhoeus
                   :max_redirects, :proxy, :disable_ssl_peer_verification,
                   :ssl_cert, :ssl_cert_type, :ssl_key, :ssl_key_type,
                   :ssl_key_password, :ssl_cacert, :ssl_capath, :verbose,
-                  :username, :password, :auth_method
+                  :username, :password, :auth_method, :enable_cookies
 
     # Initialize a new Request
     #
@@ -48,6 +48,7 @@ module Typhoeus
       @user_agent       = options[:user_agent] || Typhoeus::USER_AGENT
       @cache_timeout    = options[:cache_timeout]
       @follow_location  = options[:follow_location]
+      @enable_cookies   = options[:enable_cookies]
       @max_redirects    = options[:max_redirects]
       @proxy            = options[:proxy]
       @disable_ssl_peer_verification = options[:disable_ssl_peer_verification]

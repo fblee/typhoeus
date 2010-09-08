@@ -27,6 +27,7 @@ module Typhoeus
       :CURLOPT_HTTPAUTH       => 107,
       :CURLOPT_USERPWD        => 10000 + 5,
       :CURLOPT_VERBOSE        => 41,
+      :CURLOPT_COOKIEFILE     => 10000 + 31,
       :CURLOPT_PROXY          => 10004,
       :CURLOPT_VERIFYPEER     => 64,
       :CURLOPT_NOBODY         => 44,
@@ -100,6 +101,12 @@ module Typhoeus
         set_option(OPTION_VALUES[:CURLOPT_FOLLOWLOCATION], 1)
       else
         set_option(OPTION_VALUES[:CURLOPT_FOLLOWLOCATION], 0)
+      end
+    end
+    
+    def enable_cookies=(boolean)
+      if boolean
+        set_option(OPTION_VALUES[:CURLOPT_COOKIEFILE], '')            
       end
     end
 
